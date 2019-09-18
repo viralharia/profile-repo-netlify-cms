@@ -13,7 +13,7 @@ tags:
 **If we initialize two Integer objects with literal values, Integer a = 127; Integer b = 127; Why does a == b evaluate to true when both are holding two separate objects?**
 
 * Direct assignment of an `int` literal to an `Integer` reference is an example of **_auto-boxing_** concept where the literal value to object conversion code is handled by the compiler, so during compilation phase, compiler converts `Integer a = 127;` to `Integer a = Integer.valueOf(127);`.
-* The `Integer` class maintains an internal `IntegerCache`_** for integers which, by default, ranges from **_-128 to 127_** and `Integer.valueOf()` method returns objects of mentioned range from that cache. 
+* The `Integer` class maintains an internal `IntegerCache` for integers which, by default, ranges from **_ -128 to 127_** and `Integer.valueOf()` method returns objects of mentioned range from that cache. 
 * So a == b returns true because a and b both are pointing to the same object.
 
 ### Under the hood
@@ -22,6 +22,8 @@ tags:
 * In other words, instead of creating and returning new integer objects, `Integer.valueOf()` method returns `Integer` objects from an internal `IntegerCache` if the passed int literal is greater than -128 and less than 127.
 * Java caches integer objects that fall into -128 to 127 range because this range of integers gets used a lot in day-to-day programming, which indirectly saves some memory.
 * The cache is initialized on the first usage when the class gets loaded into memory because of the static block. The max range of the cache can be controlled by the `-XX:AutoBoxCacheMax` JVM option.
+* Note that the cache is pre-filled on startup rather than on demand, meaning that the memory footprint of the cache is constant no matter which Integers are actually used in the VM. Tweaking the cache to a very large size thus comes with a steep prize in terms of memory consumption.
+* Also the parameter to set the size of the cache only affects the upper limit and never the lower, meaning that there is no simple way to get Integers smaller than -128 to be interned in the cache.
 
 ```java
 public static Integer valueOf(int i) {
@@ -38,7 +40,7 @@ public static Integer valueOf(int i) {
 
 ### Word of Caution
 * This behaviour is exhibited only when using - `Integer.valueOf()`. when initializing the `Integer` object either by directly assigning the int literal to Integer object and compiler using `Integer.valueOf()` under the hood or manually initializing Integer object by calling `Integer.valueOf()` method.
-* If we use 'new' operator to initialize the `Integer` object, then `IntegerCache` does not come into the picture and a new object is created every time.
+* If we use 'new' operator to initialize the `Integer` object, then `IntegerCache` does not come into the picture and a new object is created every time. (This feature was supposed to be deprecated in Java 9. I will have confirm on this.)
 
 ```java
 public class Code {
