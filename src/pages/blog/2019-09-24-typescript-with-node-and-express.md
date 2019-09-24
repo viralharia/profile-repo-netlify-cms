@@ -39,7 +39,7 @@ This modification allows us to call typescript functions from the command line i
 npm run tsc -- --init
 ```
 This command initializes the typescript project by creating the `tsconfig.json` file.
-`tsconfig.json` files allows us to configure various properties of Typescript such as path where `.js` files should be placed etc.
+`tsconfig.json` files allows us to configure various compiler options for a project such as path where `.js` files should be placed etc.
 
 ### Installing corresponding Typescript modules of other node modules used in the project
 Typescript does not know types of various classes of different node modules used in your project such as express, chai, mocha etc.
@@ -84,5 +84,12 @@ and then you can start the development env usnig cmd:
 npm run dev
 ```
 
-Please note, all these dependencies should be placed in "devDependencies" section of package.json file.
+> Please note, all these dependencies should be placed in "devDependencies" section of package.json file.
 And in production env, always use the javascript version of the project in deployment.
+
+### Installing TSLint - Typescript linting library
+Add `tslint` in the "devDependencies" section and then run following command to generate - `tslint.json` file
+```javascript
+tslint --init
+```
+Use the generated `tslint.json` file to configure various linting parameters.
