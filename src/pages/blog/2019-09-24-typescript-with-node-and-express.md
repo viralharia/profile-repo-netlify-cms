@@ -11,10 +11,14 @@ tags:
 ---
 To install `typescript` package globally, use
 ```javascript
-npm install typescript -s
+npm install -g typescript
 ```
 OR 
 To use only in one project, add typescript in "devDependencies" section of package.json file.
+```javascript
+npm install typescript --save-dev
+```
+
 ```javascript
   "devDependencies": {    
     "typescript": "^3.3.4000"
@@ -23,6 +27,7 @@ To use only in one project, add typescript in "devDependencies" section of packa
     "express": "^4.16.4"
   }
 ```
+This will give our terminal access to the TypeScript compiler, simply with using the `tsc` command.
 
 ## About the Typescript node package
 Node.js is an engine that runs Javascript and not Typescript. The node Typescript package allows you to transpile your `.ts` files to `.js` scripts. Babel can also be used to transpile Typescript, however the market standard is to use the official Microsoft package.
@@ -39,7 +44,7 @@ This modification allows us to call typescript functions from the command line i
 npm run tsc -- --init
 ```
 This command initializes the typescript project by creating the `tsconfig.json` file.
-`tsconfig.json` files allows us to configure various compiler options for a project such as path where `.js` files should be placed etc.
+`tsconfig.json` files allows us to configure various compiler options for a project such as path where `.js` files should be placed, ECMAScript version we want to compile to etc.
 
 ### Installing corresponding Typescript modules of other node modules used in the project
 Typescript does not know types of various classes of different node modules used in your project such as express, chai, mocha etc.
