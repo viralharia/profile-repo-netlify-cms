@@ -5,7 +5,9 @@ date: '2019-10-07 12:40'
 featuredpost: true
 featuredimage: /img/apple-touch-icon.png
 tags:
-  - coreJava java  javaDataTypes
+  - coreJava
+  - java
+  - javaDataTypes
 ---
 * 6 Numeric data types
    * 4 int types varying on number of bits and therefore range (byte, short, int, long)
