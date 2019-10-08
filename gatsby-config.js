@@ -38,6 +38,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'uploads',
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
@@ -72,13 +78,7 @@ module.exports = {
               // code used in markdown i.e. single backtick code like `this`.
               noInlineHighlight: false,
             },
-          },
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads',
-            },
-          },
+          },          
           {
             resolve: 'gatsby-remark-images',
             options: {
