@@ -50,11 +50,9 @@ String myString = myIntegerReference.toString();
 byte  myNewByte   = Byte.parseByte(myString);
 short myNewShort  = Short.parseShort(myString);
 int   myNewInt    = Integer.parseInt(myString);
-long  myNewLong   = Long.parseLong(myString);
- 
+long  myNewLong   = Long.parseLong(myString); 
 float  myNewFloat  = Float.parseFloat(myString);
 double myNewDouble = Double.parseDouble(myString);
-
 boolean myNewBoolean = Boolean.parseBoolean(myString);
 ```
 

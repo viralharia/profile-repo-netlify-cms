@@ -23,7 +23,7 @@ tags:
 * AZ is an important and foundational concept for building a highly available, fault-tolerant application using AWS.
 
 ## Why are availability zones such an important and foundational concept in Amazon Web Services?
-![single AZ architecture diagram]('../../static/img/az3.png')
+![single AZ architecture diagram]('./az3.png')
 
 * The diagram above illustrates a region with 2 zones where only one is being utilized. The architecture mirrors what a typical 3 tier application running in a user's single on-premises data center may look like. While there are redundant servers running in each tier, the data center itself is a single point of failure.
 

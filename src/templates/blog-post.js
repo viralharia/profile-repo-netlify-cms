@@ -13,6 +13,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  date,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -26,9 +27,9 @@ export const BlogPostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
-            <PostContent content={content} />
+            <p><i>{date}</i></p>
             {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
+              <div style={{ marginTop: `0.5rem` }}>
                 <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map(tag => (
@@ -39,6 +40,7 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
+            <PostContent content={content} />            
           </div>
         </div>
       </div>
@@ -51,7 +53,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object,
+  helmet: PropTypes.object,  
 }
 
 const BlogPost = ({ data }) => {
@@ -74,6 +76,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        date={post.frontmatter.date}
       />
     </Layout>
   )
