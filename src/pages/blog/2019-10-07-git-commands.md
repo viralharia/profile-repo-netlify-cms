@@ -47,6 +47,8 @@ The remote branch is the upstream branch of your local one.
 
 **git push --set-upstream origin change_alice** : This will create a change_alice branch on the Remote Repository and set our local change_alice to track that new branch.
 
+**git push -u origin {feature_branch_name}** : if you are publishing a local branch for the first time on a remote, the "-u" option is helpful. It makes sure that a tracking connection between the local and the newly created remote branch is established
+
 **git merge change_alice** : Merge the change_alice branch to the master branch (master branch first needs to be checkedout)
 ****
 ### UPDATING the dev environment
