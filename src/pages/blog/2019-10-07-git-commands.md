@@ -11,7 +11,15 @@ tags:
 
 **git add Bob.txt** - You've added the file to the Staging Area, in which you collect all the changes you wish to put into Repository
 
+**git add -all** - add all the files to the staging area
+
+**git reset** - This will unstage all files you might have staged with git add
+
+**git checkout .** - This will revert all local uncommitted changes (be it staged or not staged) (should be executed in repo root)
+
 **git commit** - your commit is added to the Local Repository.
+
+**git commit -m ""** - commit with message
 
 **git push**  -  the changes will be sent to the Remote Repository
 
@@ -22,6 +30,8 @@ tags:
 **git log** - list of all the commits with their hash as well as Author and Date
 
 **git diff {commit}^!** - to compare to the commit one before
+
+
 
 ****
 ### BRANCHES
