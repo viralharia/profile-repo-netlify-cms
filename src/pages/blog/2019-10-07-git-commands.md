@@ -31,9 +31,11 @@ tags:
 
 **git diff {commit}^!** - to compare to the commit one before
 
+**git diff {fileName}** - to see the changes in a file
 
+**git remote show origin** - to see the details of which remote repository the local repository is tracking.
+- - -
 
-****
 ### BRANCHES
 
 **git branch <branch name>** - adds the new branch to the Local Repository.
@@ -50,18 +52,24 @@ The remote branch is the upstream branch of your local one.
 **git push -u origin {feature_branch_name}** : if you are publishing a local branch for the first time on a remote, the "-u" option is helpful. It makes sure that a tracking connection between the local and the newly created remote branch is established
 
 **git merge change_alice** : Merge the change_alice branch to the master branch (master branch first needs to be checkedout)
-****
+
+- - -
+
 ### UPDATING the dev environment
 
 **git fetch** : This gets any changes on the remote as well as branches - into your Local Repository.
 Note that at this point, changes aren't integrated into the local branches and thus the Working Directory and Staging Area yet.
 
-**git pull**
+**git pull**
 
-**git pull --rebase**
+
+**git pull --rebase**
+
 
 #### Rebase
+
 * When a branch is diverging from the one it's based on and you want to integrate the latest changes back into your current branch, rebase offers a cleaner way of doing that than a merge would.
 * Using rebase you can make sure that you frequently integrate the changes other people make and push to master, while keeping a clean linear history that allows you to do a fast-forward merge when it's time to get your work into the shared branch.
-	
+  	
+
 **git rebase <branch_name>**
