@@ -22,6 +22,7 @@ So if you have 2 EC2 instance, then - 720 hours \* 2 = 1440 hours :(
 2. On left panel, select `Configuration`.
 3. On Configuration Overview menu, modify `Capacity`
 4. On Modify Capacity menu, scroll down to `Time-based scaling`
+![time-based-scaling](/img/aws-elastic-beanstalk-console-time-based-scaling.png)
 5. Select `Add scheduled action` .
 6. Set the Min and Max of instances and Desired capacity to 0.
 7. Set the start time about 5 minutes from your current UTC time so that the pause action has enough time to execute.
@@ -30,7 +31,7 @@ Note that it is in UTC(Coordinated Universal Time).
 9. Choose Local for time zone and check if scaling is scheduled at the right time.
 10. Click `Apply` so that this added scheduled action will take effect.
 11. Your environment will be updated and will be set to 0 instance.
-Environment Overview page will look like this:
+
 
 ### Steps to resume an EB environment
 1. Now that you have your EB environment paused, when you want your EB instance to resume running, you can repeat the steps above but this time, you should set min, max of instances and desired capacity to the number that you would like it to be.
