@@ -73,3 +73,25 @@ Note that at this point, changes aren't integrated into the local branches and t
   	
 
 **git rebase <branch_name>**
+- - -
+## Keep your fork synced with the original repository
+Step 1 - **git remote -v** - You'll see the current configured remote repository for your fork.
+
+Step 2 - **git remote add upstream {url of the orignial repo}**
+
+Step 3 - **git remote -v** - to verify that the upstream repo is added
+```
+$ git remote -v
+origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
+upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+```
+
+step 4 - **git fetch upstream** - to Fetch the branches and their respective commits from the upstream repository.
+
+step 5 - **git checkout master** - Check out your fork's local master branch.
+
+step 6 - **git merge upstream/master** - Merge the changes from upstream/master into your local master branch. This brings your fork's master branch into sync with the upstream repository, without losing your local changes.
+
+step 7 - then push your changes to your repo in github
