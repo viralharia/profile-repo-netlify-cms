@@ -9,13 +9,14 @@ function encode(data) {
 }
 
 export default class Index extends React.Component {
+  const [state, setState] = React.useState({})
   constructor(props) {
     super(props)
     this.state = { isValidated: false }
   }
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
+const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
   }
 
   handleSubmit = e => {
