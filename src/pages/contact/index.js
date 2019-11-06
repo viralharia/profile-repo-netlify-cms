@@ -15,8 +15,8 @@ export default class Index extends React.Component {
     this.state = { isValidated: false }
   }
 
-const handleChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value })
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   handleSubmit = e => {
