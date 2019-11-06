@@ -9,7 +9,7 @@ function encode(data) {
 }
 
 export default class Index extends React.Component {
-  const [state, setState] = React.useState({})
+  
   constructor(props) {
     super(props)
     this.state = { isValidated: false }
